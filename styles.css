@@ -1,0 +1,917 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --secondary-color: #06b6d4;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --gold-color: #fbbf24;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --radius-sm: 0.25rem;
+    --radius: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--gray-800);
+    background-color: var(--gray-50);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* 顶部信任栏 */
+.trust-bar {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 0.5rem 0;
+}
+
+.trust-bar .container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    font-size: 0.875rem;
+}
+
+.trust-bar span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* 导航栏 */
+.navbar {
+    background: white;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--gray-600);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gray-600);
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    background: white;
+    box-shadow: var(--shadow-lg);
+    padding: 1rem;
+    z-index: 99;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--gray-700);
+    text-decoration: none;
+    border-radius: var(--radius);
+    transition: background 0.2s;
+}
+
+.mobile-menu a:hover {
+    background: var(--gray-100);
+}
+
+.mobile-menu.show {
+    display: block;
+}
+
+/* 英雄区域 */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.125rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.hero-stat {
+    text-align: center;
+}
+
+.hero-stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.hero-stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+}
+
+/* Sarah简介卡片 */
+.sarah-intro {
+    padding: 4rem 0;
+    background: white;
+}
+
+.sarah-card {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: var(--radius-xl);
+    padding: 3rem;
+    box-shadow: var(--shadow-lg);
+    align-items: center;
+}
+
+.sarah-image {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.sarah-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sarah-info h2 {
+    font-size: 2rem;
+    color: var(--gray-800);
+    margin-bottom: 0.5rem;
+}
+
+.sarah-title {
+    font-size: 1.125rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.sarah-desc {
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.sarah-certs {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.cert-badge {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* 统计数据 */
+.stats {
+    background: var(--gray-100);
+    padding: 3rem 0;
+}
+
+.stats .container {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    color: var(--gray-500);
+    font-size: 0.875rem;
+}
+
+/* 精选好评 */
+.featured-reviews {
+    padding: 4rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 1.75rem;
+    color: var(--gray-800);
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    color: var(--gray-500);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.review-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s;
+}
+
+.review-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+}
+
+.review-card.featured {
+    border: 2px solid var(--gold-color);
+    position: relative;
+}
+
+.review-card.featured::before {
+    content: '精选';
+    position: absolute;
+    top: -1px;
+    right: 1rem;
+    background: var(--gold-color);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.reviewer-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.reviewer-avatar-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.reviewer-name {
+    font-weight: 600;
+    color: var(--gray-800);
+}
+
+.reviewer-name span {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    font-weight: 400;
+}
+
+.review-rating {
+    display: flex;
+    gap: 0.125rem;
+}
+
+.star {
+    color: var(--gold-color);
+    font-size: 1.1rem;
+}
+
+.star.empty {
+    color: var(--gray-300);
+}
+
+.review-product {
+    font-size: 0.875rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    padding: 0.375rem 0.75rem;
+    background: rgba(79, 70, 229, 0.1);
+    border-radius: var(--radius);
+    display: inline-block;
+}
+
+.review-content {
+    color: var(--gray-600);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.review-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gray-100);
+    font-size: 0.8rem;
+    color: var(--gray-500);
+}
+
+.effect-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--success-color);
+    color: white;
+    font-size: 0.8rem;
+    border-radius: 2rem;
+    margin-top: 0.75rem;
+    font-weight: 500;
+}
+
+/* 团队展示 */
+.team-section {
+    background: var(--gray-100);
+    padding: 4rem 0;
+}
+
+.team-section h2 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-section .section-desc {
+    text-align: center;
+    color: var(--gray-500);
+    margin-bottom: 2rem;
+}
+
+.team-image {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.team-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 服务流程 */
+.process {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 4rem 0;
+}
+
+.process h2 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 3rem;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.process-step {
+    text-align: center;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+.process-step h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.process-step p {
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+/* 按钮 */
+.btn-primary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* 页脚 */
+.footer {
+    background: var(--gray-800);
+    color: var(--gray-300);
+    padding: 3rem 0 1.5rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--gray-700);
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--gray-500);
+}
+
+/* 页面头部 */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    opacity: 0.9;
+}
+
+/* 关于页面样式 */
+.about-section {
+    padding: 3rem 0;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.about-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--gray-800);
+}
+
+/* Sarah个人资料 */
+.sarah-profile {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.profile-image {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.profile-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.profile-info h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-title {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+}
+
+.profile-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 1rem 0;
+}
+
+.profile-info p {
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* 资质列表 */
+.qualification-list {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.qual-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.qual-icon {
+    font-size: 1.5rem;
+}
+
+.qual-item h4 {
+    font-size: 1rem;
+    color: var(--gray-800);
+    margin-bottom: 0.25rem;
+}
+
+.qual-item p {
+    color: var(--gray-500);
+    font-size: 0.9rem;
+}
+
+/* 服务特色 */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.feature-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.feature-item h3 {
+    font-size: 1.1rem;
+    color: var(--gray-800);
+}
+
+.feature-item p {
+    font-size: 0.9rem;
+    color: var(--gray-500);
+}
+
+/* 工作场景图片 */
+.work-image, .team-photo {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.work-image img, .team-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.team-photo {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* 联系方式 */
+.contact-card {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.contact-card h2 {
+    color: white;
+}
+
+.contact-card > p {
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1.5rem;
+}
+
+.contact-info-large {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255,255,255,0.15);
+    padding: 1.25rem;
+    border-radius: var(--radius);
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+}
+
+.contact-label {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-bottom: 0.25rem;
+}
+
+.contact-value {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sarah-card {
+        grid-template-columns: 1fr;
+    }
+
+    .sarah-image {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .sarah-profile {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-image {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .trust-bar .container {
+        gap: 0.75rem;
+        font-size: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-stats {
+        gap: 2rem;
+    }
+
+    .hero-stat-number {
+        font-size: 2rem;
+    }
+
+    .stats .container {
+        gap: 2rem;
+    }
+
+    .reviews-grid,
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-info-large {
+        grid-template-columns: 1fr;
+    }
+
+    .sarah-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* 空状态 */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--gray-500);
+}
+
+.empty-state-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+    font-size: 1.25rem;
+    color: var(--gray-700);
+    margin-bottom: 0.5rem;
+}
