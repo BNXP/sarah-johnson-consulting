@@ -1,4 +1,4 @@
-/* 基础样式重置 */
+/* Base Styles Reset */
 * {
     margin: 0;
     padding: 0;
@@ -48,7 +48,7 @@ body {
     padding: 0 1.5rem;
 }
 
-/* 顶部信任栏 */
+/* Top Trust Bar */
 .trust-bar {
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     color: white;
@@ -68,7 +68,7 @@ body {
     gap: 0.25rem;
 }
 
-/* 导航栏 */
+/* Navigation Bar */
 .navbar {
     background: white;
     box-shadow: var(--shadow);
@@ -156,7 +156,7 @@ body {
     display: block;
 }
 
-/* 英雄区域 */
+/* Hero Section */
 .hero {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
@@ -210,7 +210,7 @@ body {
     margin-top: 0.5rem;
 }
 
-/* Sarah简介卡片 */
+/* Sarah Intro Card */
 .sarah-intro {
     padding: 4rem 0;
     background: white;
@@ -276,7 +276,7 @@ body {
     font-weight: 500;
 }
 
-/* 统计数据 */
+/* Statistics */
 .stats {
     background: var(--gray-100);
     padding: 3rem 0;
@@ -304,7 +304,7 @@ body {
     font-size: 0.875rem;
 }
 
-/* 精选好评 */
+/* Featured Reviews */
 .featured-reviews {
     padding: 4rem 0;
 }
@@ -350,7 +350,7 @@ body {
 }
 
 .review-card.featured::before {
-    content: '精选';
+    content: 'FEATURED';
     position: absolute;
     top: -1px;
     right: 1rem;
@@ -462,7 +462,7 @@ body {
     font-weight: 500;
 }
 
-/* 团队展示 */
+/* Team Section */
 .team-section {
     background: var(--gray-100);
     padding: 4rem 0;
@@ -494,7 +494,7 @@ body {
     display: block;
 }
 
-/* 服务流程 */
+/* Process Steps */
 .process {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
@@ -541,7 +541,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* 按钮 */
+/* Buttons */
 .btn-primary {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -571,7 +571,7 @@ body {
     text-align: center;
 }
 
-/* 页脚 */
+/* Footer */
 .footer {
     background: var(--gray-800);
     color: var(--gray-300);
@@ -604,7 +604,7 @@ body {
     color: var(--gray-500);
 }
 
-/* 页面头部 */
+/* Page Header */
 .page-header {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
@@ -622,7 +622,7 @@ body {
     opacity: 0.9;
 }
 
-/* 关于页面样式 */
+/* About Page Styles */
 .about-section {
     padding: 3rem 0;
 }
@@ -646,7 +646,7 @@ body {
     color: var(--gray-800);
 }
 
-/* Sarah个人资料 */
+/* Sarah Profile */
 .sarah-profile {
     display: grid;
     grid-template-columns: 280px 1fr;
@@ -691,7 +691,7 @@ body {
     margin-bottom: 1rem;
 }
 
-/* 资质列表 */
+/* Qualifications List */
 .qualification-list {
     display: grid;
     gap: 1.25rem;
@@ -718,7 +718,7 @@ body {
     font-size: 0.9rem;
 }
 
-/* 服务特色 */
+/* Service Features */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -754,7 +754,7 @@ body {
     color: var(--gray-500);
 }
 
-/* 工作场景图片 */
+/* Work Scene Images */
 .work-image, .team-photo {
     border-radius: var(--radius-lg);
     overflow: hidden;
@@ -772,7 +772,7 @@ body {
     margin: 0 auto;
 }
 
-/* 联系方式 */
+/* Contact Info */
 .contact-card {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
@@ -819,7 +819,7 @@ body {
     font-weight: 600;
 }
 
-/* 响应式设计 */
+/* Responsive Design */
 @media (max-width: 1024px) {
     .reviews-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -898,7 +898,7 @@ body {
     }
 }
 
-/* 空状态 */
+/* Empty State */
 .empty-state {
     text-align: center;
     padding: 4rem 2rem;
